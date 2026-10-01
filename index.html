@@ -1,163 +1,93 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kikokotoo Kisasa</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #fdf0ca;
-        }
-
-        .calculator {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            width: 320px;
-        }
-
-        #display {
-            width: 100%;
-            height: 70px;
-            background-color: #0f172a;
-            border: none;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            font-size: 2rem;
-            text-align: right;
-            padding: 15px;
-            outline: none;
-        }
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-
-        button {
-            padding: 20px;
-            border-radius: 12px;
-            border: none;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
-            background-color: #37da3f;
-            color: #ffffff;
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        button.operator {
-            background-color: #f97316;
-            color: #ffffff;
-        }
-
-        button.operator:hover {
-            background-color: #ea580c;
-        }
-
-        button.clear {
-            background-color: #ef4444;
-            color: #ffffff;
-        }
-
-        button.clear:hover {
-            background-color: #dc2626;
-        }
-
-        button.equal {
-            background-color: #22c55e;
-            color: #ffffff;
-            grid-column: span 2;
-        }
-
-        button.equal:hover {
-            background-color: #16a34a;
-        }
-
-        button:hover:not(.operator):not(.clear):not(.equal) {
-            background-color: #518cdf;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Siyad Yussuf Farm - Fresh mangoes, lemons and vegetables.">
+  <title>Siyad Yussuf Farm</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home">Siyad Yussuf Farm</a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+    <nav id="navLinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="calculator">
-        <!-- Sehemu ya kuonyesha namba -->
-        <input type="text" id="display" readonly placeholder="0">
-        
-        <!-- Vitufe vya kikokotoo -->
-        <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button onclick="appendValue('/')" class="operator">/</button>
-            <button onclick="appendValue('*')" class="operator">*</button>
-            <button onclick="appendValue('-')" class="operator">-</button>
-            
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('+')" class="operator">+</button>
-            
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('.')">.</button>
-            
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="calculate()" class="equal">=</button>
-            
-            <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
-        </div>
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <p class="eyebrow">FRESH • LOCAL • QUALITY</p>
+    <h1>Fresh produce, straight from the farm.</h1>
+    <p class="hero-text">Welcome to Siyad Yussuf Farm. We grow and supply fresh mangoes, lemons and vegetables for customers looking for quality farm produce.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#products">View Products</a>
+      <a class="btn secondary" href="#contact">Contact Us</a>
     </div>
+  </div>
+</section>
 
-    <script>
-        const display = document.getElementById('display');
+<section id="about" class="section">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow">ABOUT US</p>
+      <h2>Growing with care.</h2>
+      <p>Siyad Yussuf Farm focuses on producing fresh, quality agricultural products. Our goal is to serve customers with reliable farm produce while building a sustainable farming business.</p>
+      <p>We currently focus on mangoes, lemons and a range of fresh vegetables.</p>
+    </div>
+    <div class="info-card">
+      <h3>What we offer</h3>
+      <ul><li>Fresh farm produce</li><li>Quality-focused farming</li><li>Direct customer communication</li><li>Growing product range</li></ul>
+    </div>
+  </div>
+</section>
 
-        // Kuongeza namba au alama kwenye kioo
-        function appendValue(value) {
-            if (display.value === '0' && value !== '.') {
-                display.value = value;
-            } else {
-                display.value += value;
-            }
-        }
+<section id="products" class="section products-section">
+  <div class="container">
+    <p class="eyebrow">OUR PRODUCTS</p>
+    <h2>Fresh from Siyad Yussuf Farm</h2>
+    <div class="product-grid">
+      <article class="product-card"><div class="product-icon">🥭</div><h3>Mangoes</h3><p>Fresh mangoes grown for great taste and quality.</p><button class="order-btn" data-product="Mangoes">Ask about mangoes</button></article>
+      <article class="product-card"><div class="product-icon">🍋</div><h3>Lemons</h3><p>Fresh lemons suitable for homes, shops and food businesses.</p><button class="order-btn" data-product="Lemons">Ask about lemons</button></article>
+      <article class="product-card"><div class="product-icon">🥬</div><h3>Vegetables</h3><p>Fresh vegetables supplied according to availability and season.</p><button class="order-btn" data-product="Vegetables">Ask about vegetables</button></article>
+    </div>
+  </div>
+</section>
 
-        // Kufuta kila kitu kwenye kioo
-        function clearDisplay() {
-            display.value = '';
-        }
+<section class="section highlight">
+  <div class="container">
+    <p class="eyebrow">WHY CHOOSE US</p><h2>Simple, fresh and customer-focused.</h2>
+    <div class="features">
+      <div><strong>01</strong><h3>Freshness</h3><p>We focus on supplying fresh farm produce.</p></div>
+      <div><strong>02</strong><h3>Quality</h3><p>We care about the quality of what we grow and supply.</p></div>
+      <div><strong>03</strong><h3>Communication</h3><p>Contact us directly to ask about products and availability.</p></div>
+    </div>
+  </div>
+</section>
 
-        // Kufanya mahesabu
-        function calculate() {
-            try {
-                // eval inachakata hesabu zilizopo kwenye kioo (mfano: 2+3*5)
-                if (display.value) {
-                    display.value = eval(display.value);
-                }
-            } catch (error) {
-                display.value = 'Abdirizak';
-            }
-        }
-    </script>
+<section id="contact" class="section contact">
+  <div class="container contact-box">
+    <div>
+      <p class="eyebrow">CONTACT US</p>
+      <h2>Interested in our produce?</h2>
+      <p>Contact Siyad Yussuf Farm for products, prices and availability.</p>
+      <p class="contact-line">📞 <a href="tel:+254759595810">0759595810</a></p>
+      <p class="contact-line">✉️ <a href="mailto:siadyussuf64@gmail.com">siadyussuf64@gmail.com</a></p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn whatsapp" href="https://wa.me/254759595810" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="btn secondary" href="tel:+254759595810">Call Us</a>
+      <a class="btn secondary" href="mailto:siadyussuf64@gmail.com">Email Us</a>
+    </div>
+  </div>
+</section>
+</main>
 
+<footer><div class="container footer-content"><p>© <span id="year"></span> Siyad Yussuf Farm. All rights reserved.</p><a href="#home">Back to top ↑</a></div></footer>
+<script src="script.js"></script>
 </body>
 </html>
